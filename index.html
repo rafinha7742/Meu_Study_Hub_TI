@@ -1,1 +1,440 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio acadêmico e profissional na área de Tecnologia da Informação.">
+  <title>Meu Portfólio | Tecnologia da Informação</title>
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(13, 17, 23, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 105px 0 90px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--green);
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p, .section-description {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #08111e;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 14px;
+    }
+
+    .profile-icon {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      background: #1f3854;
+      color: var(--accent);
+      font-size: 2rem;
+      border-radius: 16px;
+      margin-bottom: 22px;
+    }
+
+    .profile-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 75px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding: 65px 0;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">Meu<span>Portfólio.</span></a>
+
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container hero" id="inicio">
+      <div>
+        <span class="tag">Portfólio acadêmico e profissional</span>
+        <h1>Olá, sou estudante de <span>Tecnologia da Informação.</span></h1>
+
+        <p>
+          Curso Análise e Desenvolvimento de Sistemas e utilizo este espaço
+          para documentar minha evolução, apresentar projetos e compartilhar
+          conhecimentos adquiridos durante minha formação.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#projetos">Ver projetos</a>
+          <a class="button" href="https://github.com/rafinha7742"
+             target="_blank" rel="noopener noreferrer">Meu GitHub</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-icon">&lt;/&gt;</div>
+        <h2>Estudante de ADS</h2>
+        <p>
+          Aprendizado contínuo, desenvolvimento de projetos,
+          organização de código e construção de experiência prática.
+        </p>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="container">
+        <h2 class="section-title">Sobre mim</h2>
+        <p class="section-description">
+          Sou estudante de Análise e Desenvolvimento de Sistemas,
+          interessado em tecnologia, desenvolvimento de software,
+          dados e infraestrutura. Este portfólio reúne atividades
+          acadêmicas e projetos desenvolvidos ao longo da minha formação.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <h2 class="section-title">Meus projetos</h2>
+        <p class="section-description">
+          Projetos e atividades que demonstram minha evolução acadêmica.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Projetos acadêmicos</h3>
+            <p>
+              Atividades práticas, exercícios e trabalhos desenvolvidos
+              durante o curso de Análise e Desenvolvimento de Sistemas.
+            </p>
+            <a class="card-link"
+               href="https://github.com/rafinha7742/Meu_Study_Hub_TI/tree/main/02_Disciplinas_Atuais">
+              Explorar atividades →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Projetos pessoais</h3>
+            <p>
+              Aplicações e experimentos utilizados para praticar
+              programação, organização de dados e novas tecnologias.
+            </p>
+            <a class="card-link"
+               href="https://github.com/rafinha7742/Meu_Study_Hub_TI/tree/main/03_Projetos_e_Certificados">
+              Explorar projetos →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Redes de computadores</h3>
+            <p>
+              Estudos sobre infraestrutura de redes, conceitos de
+              conectividade e atividades práticas de aprendizagem.
+            </p>
+            <a class="card-link"
+               href="https://github.com/rafinha7742/Meu_Study_Hub_TI">
+              Acessar repositório →
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Banco de dados</h3>
+            <p>
+              Exercícios e estudos relacionados à modelagem,
+              organização e consulta de dados.
+            </p>
+            <a class="card-link"
+               href="https://github.com/rafinha7742/Meu_Study_Hub_TI">
+              Acessar repositório →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnologias">
+      <div class="container">
+        <h2 class="section-title">Tecnologias e conhecimentos</h2>
+        <p class="section-description">
+          Ferramentas e áreas de conhecimento em desenvolvimento.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Banco de dados</span>
+          <span class="skill">Redes de computadores</span>
+          <span class="skill">Análise de sistemas</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2 class="section-title">Contato e conexões</h2>
+
+        <div class="contact-box">
+          <p>
+            Acompanhe meus estudos, projetos e evolução profissional
+            pelos meus perfis.
+          </p>
+
+          <div class="buttons">
+            <a class="button primary"
+               href="https://github.com/rafinha7742"
+               target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            <a class="button"
+               href="https://www.linkedin.com/"
+               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Portfólio acadêmico • Análise e Desenvolvimento de Sistemas</p>
+      <p>Desenvolvido como parte da minha jornada de aprendizagem.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
