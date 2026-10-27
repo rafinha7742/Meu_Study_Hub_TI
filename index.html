@@ -111,7 +111,8 @@
       color: var(--accent);
     }
 
-    .hero p, .section-description {
+    .hero p,
+    .section-description {
       color: var(--muted);
       max-width: 620px;
     }
@@ -193,6 +194,7 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 25px;
+      overflow-wrap: anywhere;
     }
 
     .card h3 {
@@ -210,6 +212,21 @@
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: bold;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .project-language {
+      margin-top: 10px;
+      font-size: 0.85rem !important;
+    }
+
+    .status-message {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      padding: 15px 0;
     }
 
     .skills {
@@ -266,6 +283,10 @@
       section {
         padding: 55px 0;
       }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
@@ -289,7 +310,11 @@
     <div class="container hero" id="inicio">
       <div>
         <span class="tag">Portfólio acadêmico e profissional</span>
-        <h1>Olá, sou estudante de <span>Tecnologia da Informação.</span></h1>
+
+        <h1>
+          Olá, sou estudante de
+          <span>Tecnologia da Informação.</span>
+        </h1>
 
         <p>
           Curso Análise e Desenvolvimento de Sistemas e utilizo este espaço
@@ -299,14 +324,23 @@
 
         <div class="buttons">
           <a class="button primary" href="#projetos">Ver projetos</a>
-          <a class="button" href="https://github.com/rafinha7742"
-             target="_blank" rel="noopener noreferrer">Meu GitHub</a>
+
+          <a
+            class="button"
+            href="https://github.com/rafinha7742"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Meu GitHub
+          </a>
         </div>
       </div>
 
       <div class="profile-card">
         <div class="profile-icon">&lt;/&gt;</div>
+
         <h2>Estudante de ADS</h2>
+
         <p>
           Aprendizado contínuo, desenvolvimento de projetos,
           organização de código e construção de experiência prática.
@@ -317,6 +351,7 @@
     <section id="sobre">
       <div class="container">
         <h2 class="section-title">Sobre mim</h2>
+
         <p class="section-description">
           Sou estudante de Análise e Desenvolvimento de Sistemas,
           interessado em tecnologia, desenvolvimento de software,
@@ -329,58 +364,21 @@
     <section id="projetos">
       <div class="container">
         <h2 class="section-title">Meus projetos</h2>
+
         <p class="section-description">
-          Projetos e atividades que demonstram minha evolução acadêmica.
+          Estes projetos são carregados automaticamente a partir dos
+          repositórios públicos da minha conta no GitHub.
         </p>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Projetos acadêmicos</h3>
-            <p>
-              Atividades práticas, exercícios e trabalhos desenvolvidos
-              durante o curso de Análise e Desenvolvimento de Sistemas.
-            </p>
-            <a class="card-link"
-               href="https://github.com/rafinha7742/Meu_Study_Hub_TI/tree/main/02_Disciplinas_Atuais">
-              Explorar atividades →
-            </a>
-          </article>
-
-          <article class="card">
-            <h3>Projetos pessoais</h3>
-            <p>
-              Aplicações e experimentos utilizados para praticar
-              programação, organização de dados e novas tecnologias.
-            </p>
-            <a class="card-link"
-               href="https://github.com/rafinha7742/Meu_Study_Hub_TI/tree/main/03_Projetos_e_Certificados">
-              Explorar projetos →
-            </a>
-          </article>
-
-          <article class="card">
-            <h3>Redes de computadores</h3>
-            <p>
-              Estudos sobre infraestrutura de redes, conceitos de
-              conectividade e atividades práticas de aprendizagem.
-            </p>
-            <a class="card-link"
-               href="https://github.com/rafinha7742/Meu_Study_Hub_TI">
-              Acessar repositório →
-            </a>
-          </article>
-
-          <article class="card">
-            <h3>Banco de dados</h3>
-            <p>
-              Exercícios e estudos relacionados à modelagem,
-              organização e consulta de dados.
-            </p>
-            <a class="card-link"
-               href="https://github.com/rafinha7742/Meu_Study_Hub_TI">
-              Acessar repositório →
-            </a>
-          </article>
+        <div
+          id="github-projects"
+          class="grid"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <p class="status-message">
+            Carregando projetos do GitHub...
+          </p>
         </div>
       </div>
     </section>
@@ -388,6 +386,7 @@
     <section id="tecnologias">
       <div class="container">
         <h2 class="section-title">Tecnologias e conhecimentos</h2>
+
         <p class="section-description">
           Ferramentas e áreas de conhecimento em desenvolvimento.
         </p>
@@ -416,13 +415,23 @@
           </p>
 
           <div class="buttons">
-            <a class="button primary"
-               href="https://github.com/rafinha7742"
-               target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              class="button primary"
+              href="https://github.com/rafinha7742"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
 
-            <a class="button"
-               href="https://www.linkedin.com/"
-               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a
+              class="button"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
@@ -435,6 +444,90 @@
       <p>Desenvolvido como parte da minha jornada de aprendizagem.</p>
     </div>
   </footer>
+
+  <script>
+    const container = document.getElementById("github-projects");
+
+    async function carregarProjetos() {
+      container.setAttribute("aria-busy", "true");
+
+      try {
+        const resposta = await fetch(
+          "https://api.github.com/users/rafinha7742/repos?sort=updated&per_page=100"
+        );
+
+        if (!resposta.ok) {
+          throw new Error(
+            "Não foi possível consultar o GitHub. Código: " +
+            resposta.status
+          );
+        }
+
+        const repositorios = await resposta.json();
+
+        // Exibe repositórios próprios, públicos e não arquivados.
+        const projetos = repositorios.filter(
+          repo => !repo.fork && !repo.archived
+        );
+
+        container.replaceChildren();
+
+        if (projetos.length === 0) {
+          const mensagem = document.createElement("p");
+          mensagem.className = "status-message";
+          mensagem.textContent =
+            "Nenhum projeto público encontrado no GitHub.";
+
+          container.appendChild(mensagem);
+          return;
+        }
+
+        projetos.forEach(repo => {
+          const card = document.createElement("article");
+          card.className = "card";
+
+          const titulo = document.createElement("h3");
+          titulo.textContent = repo.name;
+
+          const descricao = document.createElement("p");
+          descricao.textContent =
+            repo.description ||
+            "Repositório sem descrição cadastrada.";
+
+          const linguagem = document.createElement("p");
+          linguagem.className = "project-language";
+          linguagem.textContent =
+            "Linguagem principal: " +
+            (repo.language || "Não informada");
+
+          const link = document.createElement("a");
+          link.className = "card-link";
+          link.href = repo.html_url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = "Ver repositório →";
+
+          card.append(titulo, descricao, linguagem, link);
+          container.appendChild(card);
+        });
+      } catch (erro) {
+        console.error("Erro ao carregar projetos do GitHub:", erro);
+
+        container.replaceChildren();
+
+        const mensagem = document.createElement("p");
+        mensagem.className = "status-message";
+        mensagem.textContent =
+          "Não foi possível carregar os projetos do GitHub. " +
+          "Verifique sua conexão e tente novamente mais tarde.";
+
+        container.appendChild(mensagem);
+      } finally {
+        container.setAttribute("aria-busy", "false");
+      }
+    }
+
+    carregarProjetos();
+  </script>
 </body>
 </html>
-
